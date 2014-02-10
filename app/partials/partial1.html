@@ -1,0 +1,15 @@
+<form name="requestForm" ng-submit="sendRequest()">
+
+<input type="text" ng-model="restClient.requestUrl" class="form-control" placeholder="Request URL">
+<p>
+        <button type="button" class="btn btn-default">GET</button>
+        <button type="button" class="btn btn-default">POST</button>
+        <button type="button" class="btn btn-default">PUT</button>
+        <button type="button" class="btn btn-default">DELETE</button>
+        <button type="button" class="btn btn-default">PATCH</button>
+        <button type="button" class="btn btn-default">OPTIONS</button>
+        <button type="button" class="btn btn-default">HEAD</button>
+</p>
+
+<button type="button" class="btn btn-lg btn-primary">Send</button>
+
