@@ -4,6 +4,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('restApp', [
   'ngRoute',
+  'ui.bootstrap',
   'restApp.filters',
   'restApp.services',
   'restApp.directives',

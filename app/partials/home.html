@@ -1,15 +1,24 @@
 <form name="requestForm" ng-submit="sendRequest()">
 
-	<input type="text" ng-model="requestUrl" class="form-control" placeholder="Request URL" required>
+	<p><input type="text" ng-model="requestUrl" class="form-control" placeholder="Request URL" required></p>
 	<p>
-	        <input type="radio" ng-model="rVerb" value="GET">GET</input>
-	        <input type="radio" ng-model="rVerb" value="POST">POST</input>
-	        <input type="radio" ng-model="rVerb" value="PUT">PUT</input>
-	        <input type="radio" ng-model="rVerb" value="DELETE">DELETE</input>
-	        <input type="radio" ng-model="rVerb" value="PATCH">PATCH</input>
-	        <input type="radio" ng-model="rVerb" value="OPTIONS">OPTIONS</input>
-	        <input type="radio" ng-model="rVerb" value="HEAD">HEAD</input>	        
+        <input type="radio" ng-model="rVerb" value="GET">GET</input>
+        <input type="radio" ng-model="rVerb" value="POST">POST</input>
+        <input type="radio" ng-model="rVerb" value="PUT">PUT</input>
+        <input type="radio" ng-model="rVerb" value="DELETE">DELETE</input>
+        <input type="radio" ng-model="rVerb" value="PATCH">PATCH</input>
+        <input type="radio" ng-model="rVerb" value="OPTIONS">OPTIONS</input>
+        <input type="radio" ng-model="rVerb" value="HEAD">HEAD</input>	        
 	</p>
-
+	<p>
+		<h4>Headers</h4>
+		<textarea ng-model="requestParams" required class="form-control" rows="5" placeholder="Raw"></textarea>
+	</p>
+	<span ng-show="rVerb!='GET'">
+	<p>
+		<h4>Payload</h4>
+		<textarea ng-model="requestPayload" required class="form-control" rows="5" placeholder="Raw"></textarea>
+	</p>
+	</span>
 	<input type="submit" class="btn btn-lg btn-primary" name="Send"></input>
 </form>
