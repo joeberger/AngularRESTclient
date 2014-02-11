@@ -3,12 +3,14 @@
 /* Controllers */
 
 angular.module('restApp.controllers', [])
-  .controller('MainCtrl', [function() {
+  .controller('RequestCtrl', ['$scope', function($scope) {
+  	//$scope.requestUrl = "my new url";
+  	//$scope.sample = "hello";
+	$scope.sendRequest = function() {
+		    	alert($scope.requestUrl + " " + $scope.rVerb);
+	};
 
   }])
-  .controller('MyCtrl1', [function() {
+  .controller('AboutCtrl', function() {
 
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
+  });
