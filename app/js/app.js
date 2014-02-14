@@ -4,14 +4,17 @@
 // Declare app level module which depends on filters, and services
 angular.module('restApp', [
   'ngRoute',
+  'ngResource',
   'ui.bootstrap',
   'restApp.filters',
   'restApp.services',
   'restApp.directives',
   'restApp.controllers'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'RequestCtrl'});
-  $routeProvider.when('/about', {templateUrl: 'partials/about.html', controller: 'AboutCtrl'});
-  $routeProvider.otherwise({redirectTo: '/home'});
+])
+.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+  $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'RequestCtrl'})
+  				.when('/about', {templateUrl: 'partials/about.html', controller: 'AboutCtrl'})
+  				.otherwise({redirectTo: '/home'});
+  $httpProvider.defaults.withCredentials = true;
+  $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 }]);

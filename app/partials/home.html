@@ -1,3 +1,4 @@
+<div class="well">
 <form name="requestForm" ng-submit="sendRequest()">
 
 	<p><input type="text" ng-model="requestUrl" class="form-control" placeholder="Request URL" required></p>
@@ -12,13 +13,25 @@
 	</p>
 	<p>
 		<h4>Headers</h4>
-		<textarea ng-model="requestParams" required class="form-control" rows="5" placeholder="Raw"></textarea>
+		<textarea ng-model="requestHeaders" class="form-control" rows="5" placeholder="Raw"></textarea>
 	</p>
 	<span ng-show="rVerb!='GET'">
 	<p>
 		<h4>Payload</h4>
-		<textarea ng-model="requestPayload" required class="form-control" rows="5" placeholder="Raw"></textarea>
+		<textarea ng-model="requestPayload" class="form-control" rows="5" placeholder="Raw"></textarea>
 	</p>
 	</span>
 	<input type="submit" class="btn btn-lg btn-primary" name="Send"></input>
 </form>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Response</h3>
+  </div>
+  <div class="panel-body">
+    {{responseObj}}
+  </div>
+</div>
+
