@@ -15,6 +15,8 @@ angular.module('restApp', [
   $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'RequestCtrl'})
   				.when('/about', {templateUrl: 'partials/about.html', controller: 'AboutCtrl'})
   				.otherwise({redirectTo: '/home'});
-  $httpProvider.defaults.withCredentials = true;
-  $httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+  //$httpProvider.defaults.withCredentials = true;
+  //$httpProvider.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+  $httpProvider.defaults.useXDomain = true;
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);

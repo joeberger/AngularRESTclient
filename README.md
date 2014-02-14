@@ -8,7 +8,7 @@ This project is an Advanced REST Client designed for developers to test their RE
 You can pick one of these options:
 
 * serve this repository with your webserver
-* install node.js and run `scripts/web-server.js`
+* install node.js and run `scripts/web-server.js` from root directory
 
 Then navigate your browser to `http://localhost:<port>/app/index.html` to see the app running in
 your browser.
@@ -16,7 +16,7 @@ your browser.
 
 ### Running unit tests
 
-We recommend using [jasmine](http://pivotal.github.com/jasmine/) and
+Use [jasmine](http://pivotal.github.com/jasmine/) and
 [Karma](http://karma-runner.github.io) for your unit tests/specs, but you are free
 to use whatever works for you.
 
@@ -30,7 +30,7 @@ or remote browser.
 
 ### End to end testing
 
-We recommend using [protractor](https://github.com/angular/protractor) for end-to-end tests. It
+Use [protractor](https://github.com/angular/protractor) for end-to-end tests. It
 uses native events and has special features for Angular applications.
 
 Requires a webserver, node.js + `./scripts/web-server.js` or your backend server that hosts the angular static files.

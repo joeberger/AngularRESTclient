@@ -3,6 +3,33 @@
 /* Controllers */
 
 angular.module('restApp.controllers', [])
+/*
+  .controller('FetchCtrl', function($scope, $http, $templateCache) {
+  $scope.method = 'GET';
+  $scope.url = 'http-hello.html';
+ 
+  $scope.fetch = function() {
+    $scope.code = null;
+    $scope.response = null;
+ 
+    $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
+      success(function(data, status) {
+        $scope.status = status;
+        $scope.data = data;
+      }).
+      error(function(data, status) {
+        $scope.data = data || "Request failed";
+        $scope.status = status;
+    });
+  };
+ 
+  $scope.updateModel = function(method, url) {
+    $scope.method = method;
+    $scope.url = url;
+  };
+})
+*/
+
   .controller('RequestCtrl', function($scope, $resource, $http) {
   	//$scope.requestUrl = "my new url";
   	//$scope.sample = "hello";
@@ -22,23 +49,38 @@ angular.module('restApp.controllers', [])
               //   'Access-Control-Allow-Headers': 'Content-Type, X-Requested-With'
               // }
             })
-        	.success(function(data, status, headers, config) 
-              {
-                var strJSON=data;
-                debugger;
-                if(strJSON.status=="Success")
-                {
-                	// data
-                }
-                else
-                {
-                    $scope.responseObj=strJSON.status;
-                }
-              })
+            .success(function(data, status, headers, config) {
+                $scope.headers = headers;
+                $scope.config = config;
+                $scope.status = status;
+                $scope.data = data;
+            })
             .error(function(data, status, headers, config) {
-			    // called asynchronously if an error occurs
-			    // or server returns response with an error status.
-			  });
+                $scope.data = data || "Request failed";
+                $scope.status = status;
+                $scope.headers = headers;
+                $scope.config = config;
+            });
+
+
+
+     //    	.success(function(data, status, headers, config) 
+     //          {
+     //            var strJSON=data;
+     //            debugger;
+     //            if(strJSON.status=="Success")
+     //            {
+     //            	// data
+     //            }
+     //            else
+     //            {
+     //                $scope.responseObj=strJSON.status;
+     //            }
+     //          })
+     //        .error(function(data, status, headers, config) {
+			  //   // called asynchronously if an error occurs
+			  //   // or server returns response with an error status.
+			  // });
     };
 
 

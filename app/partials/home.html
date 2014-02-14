@@ -1,37 +1,54 @@
-<div class="well">
-<form name="requestForm" ng-submit="sendRequest()">
-
-	<p><input type="text" ng-model="requestUrl" class="form-control" placeholder="Request URL" required></p>
-	<p>
-        <input type="radio" ng-model="rVerb" value="GET">GET</input>
-        <input type="radio" ng-model="rVerb" value="POST">POST</input>
-        <input type="radio" ng-model="rVerb" value="PUT">PUT</input>
-        <input type="radio" ng-model="rVerb" value="DELETE">DELETE</input>
-        <input type="radio" ng-model="rVerb" value="PATCH">PATCH</input>
-        <input type="radio" ng-model="rVerb" value="OPTIONS">OPTIONS</input>
-        <input type="radio" ng-model="rVerb" value="HEAD">HEAD</input>	        
-	</p>
-	<p>
-		<h4>Headers</h4>
-		<textarea ng-model="requestHeaders" class="form-control" rows="5" placeholder="Raw"></textarea>
-	</p>
-	<span ng-show="rVerb!='GET'">
-	<p>
-		<h4>Payload</h4>
-		<textarea ng-model="requestPayload" class="form-control" rows="5" placeholder="Raw"></textarea>
-	</p>
-	</span>
-	<input type="submit" class="btn btn-lg btn-primary" name="Send"></input>
-</form>
+<!--
+<div ng-controller="FetchCtrl">
+      <select ng-model="method">
+        <option>GET</option>
+        <option>JSONP</option>
+      </select>
+      <input type="text" ng-model="url" size="80"/>
+      <button id="fetchbtn" ng-click="fetch()">fetch</button><br>
+      
+      <pre>http status code: {{status}}</pre>
+      <pre>http response data: {{data}}</pre>
 </div>
+-->
 
+<div class="well">
+	<form name="requestForm" ng-submit="sendRequest()">
+		<p><input type="text" ng-model="requestUrl" class="form-control" placeholder="Request URL" required></p>
+		<p>
+	        <input type="radio" ng-model="rVerb" value="GET">GET</input>
+	        <input type="radio" ng-model="rVerb" value="POST">POST</input>
+	        <input type="radio" ng-model="rVerb" value="PUT">PUT</input>
+	        <input type="radio" ng-model="rVerb" value="DELETE">DELETE</input>
+	        <input type="radio" ng-model="rVerb" value="PATCH">PATCH</input>
+	        <input type="radio" ng-model="rVerb" value="OPTIONS">OPTIONS</input>
+	        <input type="radio" ng-model="rVerb" value="HEAD">HEAD</input>	        
+		</p>
+		<p>
+			<h4>Headers</h4>
+			<textarea ng-model="requestHeaders" class="form-control" rows="5" placeholder="Raw"></textarea>
+		</p>
+		<div ng-show="rVerb!='GET'">
+			<p>
+				<h4>Payload</h4>
+				<textarea ng-model="requestPayload" class="form-control" rows="5" placeholder="Raw"></textarea>
+			</p>
+		</div>
+		<input type="submit" class="btn btn-lg btn-primary" name="Send" />
+	</form>
+</div>
 
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Response</h3>
   </div>
   <div class="panel-body">
-    {{responseObj}}
+  	<h4>Status: {{status}}</h4>
+  	<h4>Headers:</h4>
+    <p>{{headers}}</p>
+    <h4>Config:</h4>
+    <p>{{config}}</p>
+    <h4>Data:</h4>
+    <p>{{data}}</p>
   </div>
 </div>
-
