@@ -1,28 +1,19 @@
-<!--
-<div ng-controller="FetchCtrl">
-      <select ng-model="method">
-        <option>GET</option>
-        <option>JSONP</option>
-      </select>
-      <input type="text" ng-model="url" size="80"/>
-      <button id="fetchbtn" ng-click="fetch()">fetch</button><br>
-      
-      <pre>http status code: {{status}}</pre>
-      <pre>http response data: {{data}}</pre>
+<div class="blog-header">
+    <h1 class="blog-title">Test your REST services!</h1>
+    <p class="lead blog-description">Fill out the form and submit your request.</p>
 </div>
--->
 
 <div class="well">
 	<form name="requestForm" ng-submit="sendRequest()">
 		<p><input type="text" ng-model="requestUrl" class="form-control" placeholder="Request URL" required></p>
 		<p>
-	        <input type="radio" ng-model="rVerb" value="GET">GET</input>
-	        <input type="radio" ng-model="rVerb" value="POST">POST</input>
-	        <input type="radio" ng-model="rVerb" value="PUT">PUT</input>
-	        <input type="radio" ng-model="rVerb" value="DELETE">DELETE</input>
-	        <input type="radio" ng-model="rVerb" value="PATCH">PATCH</input>
-	        <input type="radio" ng-model="rVerb" value="OPTIONS">OPTIONS</input>
-	        <input type="radio" ng-model="rVerb" value="HEAD">HEAD</input>	        
+		        <input type="radio" ng-model="rVerb" value="GET">GET</input>&nbsp;
+		        <input type="radio" ng-model="rVerb" value="POST">POST</input>&nbsp;
+		        <input type="radio" ng-model="rVerb" value="PUT">PUT</input>&nbsp;
+		        <input type="radio" ng-model="rVerb" value="DELETE">DELETE</input>&nbsp;
+		        <input type="radio" ng-model="rVerb" value="PATCH">PATCH</input>&nbsp;
+		        <input type="radio" ng-model="rVerb" value="OPTIONS">OPTIONS</input>&nbsp;
+		        <input type="radio" ng-model="rVerb" value="HEAD">HEAD</input>&nbsp;       
 		</p>
 		<p>
 			<h4>Headers</h4>
