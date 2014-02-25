@@ -7,10 +7,12 @@ angular.module('restApp.controllers', [])
   	$scope.rVerb = "GET";
 
   	$scope.sendRequest=function(){
+      debugger;
         $http({
               method: $scope.rVerb,
               url: $scope.requestUrl,              
-              data:  $scope.requestPayload
+              data:  $scope.requestPayload,
+              headers: $scope.requestHeaders
             })
             .success(function(data, status, headers, config) {
                 $scope.headers = headers;
