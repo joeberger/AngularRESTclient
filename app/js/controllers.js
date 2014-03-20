@@ -28,6 +28,21 @@ angular.module('restApp.controllers', [])
             });
     };
   })
+  .controller('GridCtrl', function($scope) {
+    $scope.myData = [{name: "Param1", number: 50},
+                     {name: "Param2", number: 43},
+                     {name: "Param3", number: 27},
+                     {name: "Param4", number: 29},
+                     {name: "Param5", number: 34}];
+    $scope.gridOptions = { 
+        data: 'myData',
+        enableCellSelection: true,
+        enableRowSelection: false,
+        enableCellEdit: true,
+        columnDefs: [{field: 'name', displayName: 'Name', enableCellEdit: true}, 
+                     {field:'number', displayName:'Value', enableCellEdit: true}]
+    };
+  })
   .controller('AboutCtrl', function() {
 
   });
